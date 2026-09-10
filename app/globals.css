@@ -1,0 +1,307 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #070e16;
+  --bg-card: #0c1a24;
+  --bg-card-hover: #0f222f;
+  --border-card: #162c3a;
+  --border-hover: #214358;
+  --text-primary: #f1f5f9;
+  --text-secondary: #7591a3;
+  --text-muted: #4e6b7d;
+  --accent-teal: #2dd4bf;
+  --accent-cyan: #38bdf8;
+  --accent-coral: #e06d53;
+  --accent-orange: #f97316;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  background-image: radial-gradient(#172d3b 1.25px, transparent 1.25px);
+  background-size: 28px 28px;
+  background-attachment: fixed;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: #172d3b;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #234559;
+}
+
+/* ===== SCHOOL BADGE ===== */
+.school-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.6rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(90deg, #136979 0%, #e06d53 100%);
+  box-shadow: 0 4px 20px rgba(19, 105, 121, 0.35);
+  letter-spacing: -0.01em;
+}
+
+/* ===== PROGRESS BADGE ===== */
+.progress-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--accent-teal);
+  background: #0d222e;
+  border: 1px solid #193a4c;
+}
+
+/* ===== CARD THI THỬ ===== */
+.thi-thu-card {
+  background: #0c1922;
+  border: 1px solid rgba(224, 109, 83, 0.4);
+  border-radius: 1rem;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: all 0.2s ease;
+}
+@media (min-width: 640px) {
+  .thi-thu-card {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+.thi-thu-card:hover {
+  border-color: rgba(224, 109, 83, 0.65);
+  box-shadow: 0 6px 24px rgba(224, 109, 83, 0.12);
+}
+
+.btn-gradient-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  padding: 0.55rem 1.4rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(90deg, #136979 0%, #e06d53 100%);
+  box-shadow: 0 4px 14px rgba(224, 109, 83, 0.25);
+  transition: all 0.2s ease;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+}
+.btn-gradient-pill:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(224, 109, 83, 0.4);
+  filter: brightness(1.08);
+}
+
+/* ===== TOPIC HEADER ===== */
+.topic-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  padding: 0.2rem 0;
+}
+
+/* ===== LESSON CARD (Home page list) ===== */
+.lesson-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.95rem 1.25rem;
+  border-radius: 0.875rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+.lesson-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+.lesson-card.disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ===== ACTIVITY CARD (Lesson Hub page) ===== */
+.activity-card {
+  display: flex;
+  align-items: center;
+  gap: 1.125rem;
+  padding: 1.125rem 1.35rem;
+  border-radius: 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+  width: 100%;
+  text-align: left;
+}
+.activity-card:hover:not(:disabled) {
+  background: var(--bg-card-hover);
+  border-color: #214358;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+.activity-card:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* ===== PILL LINK (← Trang chủ, ← Quay lại) ===== */
+.pill-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--accent-cyan);
+  background: #0c212b;
+  border: 1px solid #173747;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.pill-link:hover {
+  background: #0f2a38;
+  border-color: #234f66;
+  color: var(--accent-teal);
+}
+
+/* ===== QUIZ QUESTION BOX ===== */
+.quiz-card {
+  background: #0e1f2b;
+  border: 1px solid #193648;
+  border-radius: 1rem;
+  padding: 1.35rem 1.5rem;
+}
+
+/* ===== QUIZ OPTION CARD ===== */
+.quiz-option {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 0.875rem 1.15rem;
+  border-radius: 0.875rem;
+  background: #0e1f2b;
+  border: 1px solid #193648;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+  text-align: left;
+}
+.quiz-option:hover:not(:disabled) {
+  background: #112737;
+  border-color: #234b63;
+}
+.quiz-option.correct {
+  background: rgba(34, 197, 94, 0.12);
+  border-color: #22c55e;
+}
+.quiz-option.wrong {
+  background: rgba(239, 68, 68, 0.12);
+  border-color: #ef4444;
+}
+.quiz-option.faded {
+  opacity: 0.4;
+}
+
+/* ===== LETTER BADGE (A, B, C, D) ===== */
+.letter-badge {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  background: #162c3b;
+  color: #8faabf;
+  transition: all 0.2s ease;
+}
+.letter-badge.correct {
+  background: #22c55e;
+  color: #ffffff;
+}
+.letter-badge.wrong {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+/* ===== EXPLANATION BOX ===== */
+.explanation-box {
+  background: #0d2432;
+  border: 1px solid #1e4b63;
+  border-radius: 0.875rem;
+  padding: 1rem 1.25rem;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
