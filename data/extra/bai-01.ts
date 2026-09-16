@@ -1,6 +1,6 @@
 import { LessonExtra } from "@/lib/types";
 
-export const extraBai01: LessonExtra = {
+export const extra: LessonExtra = {
   tf: [
     {
       id: "b1-tf1",
