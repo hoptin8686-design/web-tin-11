@@ -58,8 +58,8 @@ export default function LessonClient({
     {
       key: "essay" as const,
       icon: "✏️",
-      title: "Tự luận",
-      desc: `${extra.essay.length} câu · tự trả lời rồi đối chiếu gợi ý đáp án`,
+      title: "Trả lời ngắn",
+      desc: `${extra.essay.length} câu hỏi trả lời ngắn / tự luận · có hướng dẫn đáp án chi tiết`,
       available: extra.essay.length > 0,
     },
   ];

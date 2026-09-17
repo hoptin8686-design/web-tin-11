@@ -51,7 +51,7 @@ export default function EssayViewer({ questions }: EssayViewerProps) {
             <div key={q.id} className="quiz-card space-y-4">
               <div className="flex items-center justify-between gap-2">
                 <span className="text-xs font-bold px-2.5 py-0.5 rounded bg-[#162c3b] text-[#2dd4bf]">
-                  Câu tự luận {index + 1}
+                  Câu {index + 1} · Trả lời ngắn
                 </span>
                 <span className="text-xs text-[#7591a3]">
                   {draftText.length > 0 ? `${draftText.length} ký tự nháp` : "Chưa nhập nháp"}
